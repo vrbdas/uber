@@ -16,6 +16,11 @@ gulp.task('styles', function() {
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
             .pipe(gulp.dest("src/css"))
             .pipe(browserSync.stream());
-})
+});
 
-gulp.task('default', gulp.parallel('server', 'styles'));
+gulp.task('watch', function() {
+    gulp.watch("src/sass/*.+(scss|sass)", gulp.parallel("styles"))
+    gulp.watch("src/*.html").on("change", browserSync.reload);
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
