@@ -11,8 +11,28 @@ nav
 	z-index: 5
 
 .hamburger
-	display: none
-
+		display: none
+		position: absolute
+		right: 10px
+		top: 50%
+		transform: translateY(-50%)
+		width: 26px
+		height: 12px
+		span 
+			display: block 
+			width: 100%
+			border-bottom: 2px solid #fff 
+			margin-bottom: 3px
+			transition: 0.5s all
+		&_active 
+			span 
+				margin-bottom: -2px 
+				&:nth-child(1)
+					transform: translateY(3px) rotate(-45deg)
+				&:nth-child(2)
+					display: none
+				&:nth-child(3)
+					transform: translateY(3px) rotate(45deg)
 .menu
 	display: flex
 	justify-content: space-between
@@ -149,6 +169,7 @@ nav
 		color: $main-color
 		font-size: 17px
 		font-weight: 400
+		margin-bottom: 5px
 	&_text
 		color: #202020
 		font-size: 15px
@@ -420,5 +441,24 @@ footer
 			margin-top: 19px
 			text-transform: uppercase
 			text-align: center
+	&_mobile
+		display: flex
+		gap: 8px
+		align-items: center
+		justify-content: center
+		a
+			display: block
+			width: 94px
+			height: 26px
+			img
+				width: 94px
+				height: 26px
+
 .xs-visible 
 	display: none
+
+.hide
+	display: none
+
+.show
+	display: block

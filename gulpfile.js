@@ -8,8 +8,20 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const htmlmin = require('gulp-htmlmin');
 const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync').create();
 
-const destFolder = 'Uber';
+const destFolder = 'Uber-dev';
+
+gulp.task('server', function() {
+
+    browserSync.init({
+        proxy: `${destFolder}`
+    });
+
+    gulp.watch("src/index.html").on('change', browserSync.reload);
+    gulp.watch("src/js/bundle.js").on('change', browserSync.reload);
+});
+
  
 gulp.task('clean', function () {
     return gulp.src(`C:/Code/domains/${destFolder}`, {read: false})
@@ -25,6 +37,7 @@ gulp.task('styles', function() {
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/css`))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function() {
@@ -47,6 +60,7 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/js`))
 });
 
+
 gulp.task('fonts', function () {
     return gulp.src("src/fonts/**/*")
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/fonts`))
@@ -62,4 +76,4 @@ gulp.task('images', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/img`))
 });
 
-gulp.task('default',gulp.series('clean', gulp.parallel('styles', 'watch', 'html', 'scripts', 'fonts', 'svg',  'images')));
+gulp.task('default', gulp.series('clean', gulp.parallel('server', 'styles', 'watch', 'html', 'scripts', 'fonts', 'svg',  'images')));
