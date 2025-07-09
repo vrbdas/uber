@@ -44,8 +44,6 @@
 
 /*! ../internals/array-slice */
 
-/*! ../internals/array-slice-simple */
-
 /*! ../internals/array-species-constructor */
 
 /*! ../internals/array-species-create */
@@ -78,8 +76,6 @@
 
 /*! ../internals/descriptors */
 
-/*! ../internals/document-all */
-
 /*! ../internals/document-create-element */
 
 /*! ../internals/does-not-exceed-safe-integer */
@@ -88,23 +84,21 @@
 
 /*! ../internals/dom-token-list-prototype */
 
-/*! ../internals/engine-is-browser */
-
-/*! ../internals/engine-is-deno */
-
-/*! ../internals/engine-is-ios */
-
-/*! ../internals/engine-is-ios-pebble */
-
-/*! ../internals/engine-is-node */
-
-/*! ../internals/engine-is-webos-webkit */
-
-/*! ../internals/engine-user-agent */
-
-/*! ../internals/engine-v8-version */
-
 /*! ../internals/enum-bug-keys */
+
+/*! ../internals/environment */
+
+/*! ../internals/environment-is-ios */
+
+/*! ../internals/environment-is-ios-pebble */
+
+/*! ../internals/environment-is-node */
+
+/*! ../internals/environment-is-webos-webkit */
+
+/*! ../internals/environment-user-agent */
+
+/*! ../internals/environment-v8-version */
 
 /*! ../internals/export */
 
@@ -130,13 +124,15 @@
 
 /*! ../internals/get-iterator */
 
+/*! ../internals/get-iterator-direct */
+
 /*! ../internals/get-iterator-method */
 
 /*! ../internals/get-json-replacer-function */
 
 /*! ../internals/get-method */
 
-/*! ../internals/global */
+/*! ../internals/global-this */
 
 /*! ../internals/has-own-property */
 
@@ -168,6 +164,8 @@
 
 /*! ../internals/is-object */
 
+/*! ../internals/is-possible-prototype */
+
 /*! ../internals/is-pure */
 
 /*! ../internals/is-symbol */
@@ -179,6 +177,8 @@
 /*! ../internals/iterator-create-constructor */
 
 /*! ../internals/iterator-define */
+
+/*! ../internals/iterator-helper-without-closing-on-early-error */
 
 /*! ../internals/iterators */
 
@@ -244,6 +244,10 @@
 
 /*! ../internals/regexp-flags */
 
+/*! ../internals/regexp-flags-detection */
+
+/*! ../internals/regexp-get-flags */
+
 /*! ../internals/regexp-sticky-helpers */
 
 /*! ../internals/regexp-unsupported-dot-all */
@@ -251,6 +255,8 @@
 /*! ../internals/regexp-unsupported-ncg */
 
 /*! ../internals/require-object-coercible */
+
+/*! ../internals/safe-get-built-in */
 
 /*! ../internals/set-species */
 
@@ -314,6 +320,10 @@
 
 /*! ../modules/es.array.iterator */
 
+/*! ../modules/es.iterator.constructor */
+
+/*! ../modules/es.iterator.for-each */
+
 /*! ../modules/es.json.stringify */
 
 /*! ../modules/es.object.get-own-property-symbols */
@@ -344,6 +354,8 @@
 
 /*! ./controls/html-mask-element.js */
 
+/*! ./controls/input-history.js */
+
 /*! ./controls/input.js */
 
 /*! ./controls/mask-element.js */
@@ -369,6 +381,8 @@
 /*! ./html-input-mask-element.js */
 
 /*! ./html-mask-element.js */
+
+/*! ./input-history.js */
 
 /*! ./mask-element.js */
 
@@ -402,6 +416,8 @@
 
 /*! ./masked/regexp.js */
 
+/*! ./masked/repeat.js */
+
 /*! ./modal */
 
 /*! ./pattern.js */
@@ -432,10 +448,6 @@
 
 /*! core-js/modules/es.function.name.js */
 
-/*! core-js/modules/es.json.to-string-tag.js */
-
-/*! core-js/modules/es.math.to-string-tag.js */
-
 /*! core-js/modules/es.object.from-entries.js */
 
 /*! core-js/modules/es.object.get-prototype-of.js */
@@ -448,9 +460,9 @@
 
 /*! core-js/modules/es.regexp.exec.js */
 
-/*! core-js/modules/es.string.iterator.js */
+/*! core-js/modules/es.regexp.to-string.js */
 
-/*! core-js/modules/es.symbol.async-iterator.js */
+/*! core-js/modules/es.string.iterator.js */
 
 /*! core-js/modules/es.symbol.description.js */
 
@@ -458,7 +470,9 @@
 
 /*! core-js/modules/es.symbol.js */
 
-/*! core-js/modules/es.symbol.to-string-tag.js */
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! core-js/modules/esnext.iterator.for-each.js */
 
 /*! core-js/modules/web.dom-collections.for-each.js */
 
@@ -466,7 +480,7 @@
 
 /*! imask */
 
-/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */
 
 /*!*************************!*\
   !*** ./src/js/forms.js ***!
@@ -548,12 +562,12 @@
   !*** ./node_modules/imask/esm/masked/regexp.js ***!
   \*************************************************/
 
-/*!**************************************************!*\
-  !*** ./node_modules/core-js/internals/export.js ***!
-  \**************************************************/
+/*!*************************************************!*\
+  !*** ./node_modules/imask/esm/masked/repeat.js ***!
+  \*************************************************/
 
 /*!**************************************************!*\
-  !*** ./node_modules/core-js/internals/global.js ***!
+  !*** ./node_modules/core-js/internals/export.js ***!
   \**************************************************/
 
 /*!**************************************************!*\
@@ -685,6 +699,14 @@
   \*******************************************************/
 
 /*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/environment.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/global-this.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/hidden-keys.js ***!
   \*******************************************************/
 
@@ -719,10 +741,6 @@
 /*!*******************************************************!*\
   !*** ./node_modules/imask/esm/core/change-details.js ***!
   \*******************************************************/
-
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/internals/document-all.js ***!
-  \********************************************************/
 
 /*!********************************************************!*\
   !*** ./node_modules/core-js/internals/get-built-in.js ***!
@@ -762,10 +780,6 @@
 
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/dom-iterables.js ***!
-  \*********************************************************/
-
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-ios.js ***!
   \*********************************************************/
 
 /*!*********************************************************!*\
@@ -817,14 +831,6 @@
   \**********************************************************/
 
 /*!**********************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-deno.js ***!
-  \**********************************************************/
-
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-node.js ***!
-  \**********************************************************/
-
-/*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/function-apply.js ***!
   \**********************************************************/
 
@@ -862,6 +868,10 @@
 
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/modules/es.promise.catch.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./node_modules/imask/esm/controls/input-history.js ***!
   \**********************************************************/
 
 /*!***********************************************************!*\
@@ -913,6 +923,10 @@
   \************************************************************/
 
 /*!************************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-get-flags.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
   !*** ./node_modules/core-js/internals/string-multibyte.js ***!
   \************************************************************/
 
@@ -933,15 +947,7 @@
   \************************************************************/
 
 /*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-browser.js ***!
-  \*************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-user-agent.js ***!
-  \*************************************************************/
-
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-v8-version.js ***!
+  !*** ./node_modules/core-js/internals/safe-get-built-in.js ***!
   \*************************************************************/
 
 /*!*************************************************************!*\
@@ -968,12 +974,16 @@
   !*** ./node_modules/core-js/modules/es.object.to-string.js ***!
   \*************************************************************/
 
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.regexp.to-string.js ***!
+  \*************************************************************/
+
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
   \**************************************************************/
 
 /*!**************************************************************!*\
-  !*** ./node_modules/core-js/internals/array-slice-simple.js ***!
+  !*** ./node_modules/core-js/internals/environment-is-ios.js ***!
   \**************************************************************/
 
 /*!**************************************************************!*\
@@ -981,8 +991,20 @@
   \**************************************************************/
 
 /*!**************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.iterator.for-each.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
   !*** ./node_modules/imask/esm/controls/html-mask-element.js ***!
   \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-is-node.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/internals/get-iterator-direct.js ***!
+  \***************************************************************/
 
 /*!***************************************************************!*\
   !*** ./node_modules/core-js/internals/get-iterator-method.js ***!
@@ -990,14 +1012,6 @@
 
 /*!***************************************************************!*\
   !*** ./node_modules/core-js/internals/species-constructor.js ***!
-  \***************************************************************/
-
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.json.to-string-tag.js ***!
-  \***************************************************************/
-
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.math.to-string-tag.js ***!
   \***************************************************************/
 
 /*!***************************************************************!*\
@@ -1014,10 +1028,6 @@
 
 /*!****************************************************************!*\
   !*** ./node_modules/core-js/internals/array-species-create.js ***!
-  \****************************************************************/
-
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-ios-pebble.js ***!
   \****************************************************************/
 
 /*!****************************************************************!*\
@@ -1057,6 +1067,10 @@
   \*****************************************************************/
 
 /*!*****************************************************************!*\
+  !*** ./node_modules/core-js/internals/is-possible-prototype.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
   !*** ./node_modules/core-js/internals/ordinary-to-primitive.js ***!
   \*****************************************************************/
 
@@ -1069,7 +1083,7 @@
   \*****************************************************************/
 
 /*!*****************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.to-string-tag.js ***!
+  !*** ./node_modules/core-js/modules/es.iterator.constructor.js ***!
   \*****************************************************************/
 
 /*!******************************************************************!*\
@@ -1081,7 +1095,11 @@
   \******************************************************************/
 
 /*!******************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-is-webos-webkit.js ***!
+  !*** ./node_modules/core-js/internals/environment-user-agent.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-v8-version.js ***!
   \******************************************************************/
 
 /*!******************************************************************!*\
@@ -1097,6 +1115,10 @@
   \******************************************************************/
 
 /*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-flags-detection.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/regexp-unsupported-ncg.js ***!
   \******************************************************************/
 
@@ -1105,7 +1127,7 @@
   \******************************************************************/
 
 /*!******************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.async-iterator.js ***!
+  !*** ./node_modules/core-js/modules/esnext.iterator.for-each.js ***!
   \******************************************************************/
 
 /*!*******************************************************************!*\
@@ -1181,6 +1203,10 @@
   \*********************************************************************/
 
 /*!*********************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-is-ios-pebble.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
   !*** ./node_modules/core-js/internals/symbol-registry-detection.js ***!
   \*********************************************************************/
 
@@ -1190,6 +1216,10 @@
 
 /*!*********************************************************************!*\
   !*** ./node_modules/core-js/internals/well-known-symbol-wrapped.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/core-js/modules/esnext.iterator.constructor.js ***!
   \*********************************************************************/
 
 /*!*********************************************************************!*\
@@ -1226,6 +1256,10 @@
 
 /*!***********************************************************************!*\
   !*** ./node_modules/core-js/internals/copy-constructor-properties.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-is-webos-webkit.js ***!
   \***********************************************************************/
 
 /*!***********************************************************************!*\
@@ -1299,3 +1333,7 @@
 /*!**********************************************************************************!*\
   !*** ./node_modules/core-js/internals/object-get-own-property-names-external.js ***!
   \**********************************************************************************/
+
+/*!******************************************************************************************!*\
+  !*** ./node_modules/core-js/internals/iterator-helper-without-closing-on-early-error.js ***!
+  \******************************************************************************************/
